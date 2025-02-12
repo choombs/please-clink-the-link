@@ -44,7 +44,7 @@ function displayCat() {
     };
 }
 
-// Function to display the second GIF and video
+// Function to display GIF first, then video
 function displayCatHeart() {
     document.getElementById('image-container').innerHTML = '';
 
@@ -52,7 +52,7 @@ function displayCatHeart() {
 
     // Create GIF element
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat.gif'; 
+    catHeartImage.src = 'cat.gif';
     catHeartImage.alt = 'Dancing Cat';
 
     catHeartImage.onload = function() {
@@ -60,20 +60,23 @@ function displayCatHeart() {
 
         // Create video element
         var catVideo = document.createElement('video');
-        catVideo.src = 'ValentinesVid.mp4'; 
+        catVideo.src = './ValentinesVid.mp4'; // Ensure correct path
         catVideo.alt = 'Valentine Video';
         catVideo.autoplay = true;
         catVideo.loop = true;
-        catVideo.muted = true; // Fix autoplay issue
+        catVideo.muted = true; // Fix autoplay issues
+        catVideo.playsinline = true; // Helps on mobile browsers
         catVideo.controls = true;
         catVideo.style.display = 'block';
         catVideo.style.maxWidth = '100%';
+
+        catVideo.onloadeddata = function() {
+            console.log('Video loaded successfully.');
+            catVideo.play().catch(error => console.log('Autoplay prevented:', error));
+        };
 
         imageContainer.appendChild(catVideo);
     };
 
     document.getElementById('options').style.display = 'none';
 }
-
-// Display the first GIF initially
-displayCat();
