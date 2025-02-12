@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
-    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <title>Cat Surprise</title>
+    <script src="script.js" defer></script> <!-- Linking script.js -->
 </head>
 <body>
-    <div id="container">
-        <div id="image-container"></div> <!-- Container for displaying images -->
-        <div id="text-container">
-            <div id="question">Will you be my valentine?</div> <!-- Question -->
-            <div id="options">
-                <button id="yes-button" onclick="selectOption('yes')">Yes</button> <!-- Yes button -->
-                <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
-            </div>
-        </div>
+    <div id="question">
+        <p>Will you be my Valentine?</p>
+        <button id="yes-button" onclick="selectOption('yes')">Yes</button>
+        <button id="no-button" onclick="selectOption('no')">No</button>
     </div>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <div id="image-container"></div>
+    <div id="link-container"></div> <!-- Container for the redirect link -->
+
 </body>
 </html>
